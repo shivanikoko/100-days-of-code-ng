@@ -1,41 +1,44 @@
 <div class="col-lg-6">
     <h2 class="text-center">Ng Friends talk</h2>
     <form #moodForm="ngForm">
+
         {{moodForm.value    |   json}}
+
+        {{ moodModel    |   json }}
 
         <div class="form-group">
           <label for="exampleFormControlInput1">Name:</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="May I know You name" name="name" >
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="May I know You name"  name="name" [(ngModel)]="moodModel.name" >
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Mood:</label>
-          <select class="form-control" id="exampleFormControlSelect1" name="">
-            <option>Happy</option>
-            <option>Sad</option>
+          <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="moodModel.mood" name="mood">
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
           </select>
         </div>
         <div class="form-group">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                <input type="radio" id="customRadioInline1" [(ngModel)]="moodModel.options" name="options" class="custom-control-input" value="Change">
                 <label class="custom-control-label" for="customRadioInline1">Wanna Change</label>
-            </div>
+            </div>  
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                <input type="radio" id="customRadioInline2" [(ngModel)]="moodModel.options" name="options" class="custom-control-input" value="Confess">
                 <label class="custom-control-label" for="customRadioInline2">Wanna Confess</label>
             </div>
         </div>
         <div class="form-group">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="You can share with us..."></textarea>
+          <textarea class="form-control" [(ngModel)]="moodModel.confess" name="confess" id="exampleFormControlTextarea1" rows="3" placeholder="You can share with us..."></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" ngModelGroup="changeoptions" Group="change">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" [(ngModel)]="moodModel.cycle" name="cycle" type="checkbox" value="cycle" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                     Ride Cycle 
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" [(ngModel)]="moodModel.play" name="play" type="checkbox" value="play" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
                     Play with kitty
                 </label>
