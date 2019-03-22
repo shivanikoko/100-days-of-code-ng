@@ -1,9 +1,46 @@
 <div class="col-lg-6">
-  <form name='testForm' (ngSubmit)="add()">
-    <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="text" class="form-control" [(ngModel)]="kokol" name="email">
-    </div>
-    <button type="submit" class="btn btn-default" >Submit</button>
-  </form>
+    <h2 class="text-center">Ng Friends talk</h2>
+    <form #moodForm="ngForm">
+        {{moodForm.value    |   json}}
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name:</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="May I know You name" name="name" >
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Mood:</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="">
+            <option>Happy</option>
+            <option>Sad</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline1">Wanna Change</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline2">Wanna Confess</label>
+            </div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="You can share with us..."></textarea>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Ride Cycle 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Play with kitty
+                </label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-info" type="submit">Ready to Share</button>
+    </form>
 </div>  
