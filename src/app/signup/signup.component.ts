@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   public kokol = "";
 
   moodModel = new Moodformdata('koko','Happy','Confess','nothing to say',true,false);
-
+  
   constructor() { }
 
   ngOnInit() {
